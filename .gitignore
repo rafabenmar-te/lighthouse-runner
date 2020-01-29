@@ -1,0 +1,5 @@
+.idea/*
+chrome-profile/*
+node_modules/*
+result/*
+*.iml
