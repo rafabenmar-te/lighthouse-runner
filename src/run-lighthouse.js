@@ -6,21 +6,20 @@ const args = minimist(process.argv, {
     alias: {
         'port': 'cdpPort',
         'host': 'cdpHost',
-        'url': 'url'
+        'url': 'url',
+        'o': 'output'
     },
     default: {
         cdpPort: 9222,
         cdpHost: 'localhost',
-        url: 'https://news.google.com'
+        url: 'https://news.google.com',
+        output: 'result.json'
     }
 });
 
 function writeResultToDisk(result) {
     const jsonResult = JSON.stringify(result);
-    if (!fs.existsSync('result')) {
-        fs.mkdirSync('result');
-    }
-    fs.writeFileSync('result/result.json', jsonResult);
+    fs.writeFileSync(args.output, jsonResult);
 }
 
 lh(args.url, {
