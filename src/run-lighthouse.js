@@ -6,10 +6,12 @@ const args = minimist(process.argv, {
     alias: {
         'port': 'cdpPort',
         'host': 'cdpHost',
+        'url': 'url'
     },
     default: {
         cdpPort: 9222,
         cdpHost: 'localhost',
+        url: 'https://news.google.com'
     }
 });
 
@@ -21,7 +23,7 @@ function writeResultToDisk(result) {
     fs.writeFileSync('result/result.json', jsonResult);
 }
 
-lh('https://thousandeyes.com', {
+lh(args.url, {
     port: args.cdpPort,
     hostname: args.cdpHost
 }).then(r => {
