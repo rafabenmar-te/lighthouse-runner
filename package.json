@@ -10,7 +10,7 @@
   "author": "",
   "dependencies": {
     "minimist": "1.2.0",
-    "lighthouse": "^5.6.0"
+    "lighthouse": "^9.6.8"
   },
   "license": "ISC"
 }
